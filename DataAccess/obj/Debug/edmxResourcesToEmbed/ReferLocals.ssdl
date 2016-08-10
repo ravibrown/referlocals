@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReferLocalsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="CodeTwoDigit" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeThreeDigit" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeTelePhone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_AppFeedBack">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="FeedBack" Type="ntext" />
+    <Property Name="AddedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_AppointmentDates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppointmentDateTime" Type="datetime" />
+    <Property Name="AppointmentID" Type="bigint" />
+    <Property Name="IsAcceptedByUser" Type="bit" />
+    <Property Name="IsAcceptedByProfessional" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Appointments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message" Type="ntext" />
+    <Property Name="QuoteID" Type="bigint" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="IsAcceptedByProfessional" Type="bit" />
+    <Property Name="ProfessionalID" Type="bigint" />
+    <Property Name="IsRescheduled" Type="bit" />
+    <Property Name="RescheduledByUser" Type="bit" />
+    <Property Name="RescheduledByProfessional" Type="bit" />
+    <Property Name="AddedOn" Type="datetime" />
+    <Property Name="IsViewed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Favorite">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="FavoriteTypeID" Type="bigint" />
+    <Property Name="Favoritetype" Type="int" />
+    <Property Name="AddedOn" Type="datetime" />
+    <Property Name="IsViewed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Flag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="FlagTypeID" Type="bigint" />
+    <Property Name="FlagType" Type="int" />
+    <Property Name="AddedOn" Type="datetime" />
+    <Property Name="FlagReason" Type="ntext" />
+  </EntityType>
+  <EntityType Name="tbl_HomeCards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" MaxLength="300" />
+    <Property Name="Position" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="IconImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_HomeVideo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Video" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Job_SubCategory_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="bigint" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Jobs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="CityId" Type="bigint" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="JobStatus" Type="int" />
+    <Property Name="ProfessionalID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_ManualCustomerNotes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Notes" Type="ntext" />
+    <Property Name="AddedOn" Type="datetime" />
+    <Property Name="ManualCustomerID" Type="bigint" />
+    <Property Name="CustomerType" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_ManualCustomers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="StreetAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="Apartment" Type="nvarchar" MaxLength="250" />
+    <Property Name="LocationID" Type="bigint" />
+    <Property Name="addedon" Type="datetime" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_Messages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderID" Type="bigint" />
+    <Property Name="Message" Type="ntext" />
+    <Property Name="MessageOn" Type="datetime" />
+    <Property Name="IsJobMessage" Type="bit" />
+    <Property Name="JobID" Type="bigint" />
+    <Property Name="IsDeletedBySender" Type="bit" />
+    <Property Name="IsDeletedByReceiver" Type="bit" />
+    <Property Name="ThreadID" Type="bigint" />
+    <Property Name="IsViewed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_NotificationSettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewFollowers" Type="bit" />
+    <Property Name="Recommendations" Type="bit" />
+    <Property Name="NewMessage" Type="bit" />
+    <Property Name="EstimateFeedback" Type="bit" />
+    <Property Name="AppointmentRequest" Type="bit" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Quotes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="bigint" />
+    <Property Name="ProfessionalID" Type="bigint" />
+    <Property Name="Estimate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Comments" Type="ntext" />
+    <Property Name="AddedOn" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="IsViewed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Referal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="IsSatisfied" Type="bit" />
+    <Property Name="IsRefered" Type="bit" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="SenderId" Type="bigint" />
+    <Property Name="CityId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsFlag" Type="bit" />
+    <Property Name="IsViewed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zip" Type="nvarchar" MaxLength="20" />
+    <Property Name="State" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Testimonial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_ThreadParticipants">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="ThreadID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Threads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsJobThread" Type="bit" />
+    <Property Name="JobID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="200" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="CityId" Type="bigint" />
+    <Property Name="StateId" Type="bigint" />
+    <Property Name="ZipId" Type="bigint" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Website" Type="nvarchar" MaxLength="100" />
+    <Property Name="StreetAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="Appartment" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="VerificationCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Type" Type="bigint" />
+    <Property Name="RoleId" Type="bigint" />
+    <Property Name="UniqueId" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerified" Type="bit" />
+    <Property Name="CountryCode" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="250" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceToken" Type="nvarchar" MaxLength="250" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsProfileUpdated" Type="bit" />
+    <Property Name="AzureNotificationId" Type="nvarchar" MaxLength="250" />
+    <Property Name="CanSendPushNotification" Type="bit" />
+    <Property Name="SocialID" Type="nvarchar" MaxLength="50" />
+    <Property Name="SocialType" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_User_City_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityId" Type="bigint" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_User_SubCategory_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryId" Type="bigint" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_UserDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceToken" Type="nvarchar" MaxLength="250" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="LoggedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_UserImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsProfilePicture" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsApprovedByAdmin" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__tbl_Refer__Sende__6E01572D">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Referal" Type="Self.tbl_Referal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Referal">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Refer__Sende__6EF57B66">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Referal" Type="Self.tbl_Referal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Referal">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_AppFeedBack_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_AppFeedBack" Type="Self.tbl_AppFeedBack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_AppFeedBack">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_AppointmentDates_tbl_Appointments">
+    <End Role="tbl_Appointments" Type="Self.tbl_Appointments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_AppointmentDates" Type="Self.tbl_AppointmentDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Appointments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_AppointmentDates">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Favorite_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Favorite" Type="Self.tbl_Favorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Favorite">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Flag_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Flag" Type="Self.tbl_Flag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Flag">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Job_SubCategory_Mapping_tbl_Jobs">
+    <End Role="tbl_Jobs" Type="Self.tbl_Jobs" Multiplicity="0..1" />
+    <End Role="tbl_Job_SubCategory_Mapping" Type="Self.tbl_Job_SubCategory_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Job_SubCategory_Mapping">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Job_SubCategory_Mapping_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_Job_SubCategory_Mapping" Type="Self.tbl_Job_SubCategory_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Job_SubCategory_Mapping">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Jobs_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Jobs" Type="Self.tbl_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Jobs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ManualCustomerNotes_tbl_ManualCustomers">
+    <End Role="tbl_ManualCustomers" Type="Self.tbl_ManualCustomers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_ManualCustomerNotes" Type="Self.tbl_ManualCustomerNotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ManualCustomers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_ManualCustomerNotes">
+        <PropertyRef Name="ManualCustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ManualCustomers_tbl_State">
+    <End Role="tbl_State" Type="Self.tbl_State" Multiplicity="0..1" />
+    <End Role="tbl_ManualCustomers" Type="Self.tbl_ManualCustomers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_ManualCustomers">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ManualCustomers_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_ManualCustomers" Type="Self.tbl_ManualCustomers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_ManualCustomers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Messages_tbl_Jobs">
+    <End Role="tbl_Jobs" Type="Self.tbl_Jobs" Multiplicity="0..1" />
+    <End Role="tbl_Messages" Type="Self.tbl_Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Messages">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Messages_tbl_Threads">
+    <End Role="tbl_Threads" Type="Self.tbl_Threads" Multiplicity="0..1" />
+    <End Role="tbl_Messages" Type="Self.tbl_Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Threads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Messages">
+        <PropertyRef Name="ThreadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Messages_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Messages" Type="Self.tbl_Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Messages">
+        <PropertyRef Name="SenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NotificationSettings_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_NotificationSettings" Type="Self.tbl_NotificationSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_NotificationSettings">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Quotes_tbl_Jobs">
+    <End Role="tbl_Jobs" Type="Self.tbl_Jobs" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Quotes" Type="Self.tbl_Quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Quotes">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Quotes_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Quotes" Type="Self.tbl_Quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Quotes">
+        <PropertyRef Name="ProfessionalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SubCategory_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_SubCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ThreadParticipants_tbl_Threads">
+    <End Role="tbl_Threads" Type="Self.tbl_Threads" Multiplicity="0..1" />
+    <End Role="tbl_ThreadParticipants" Type="Self.tbl_ThreadParticipants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Threads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_ThreadParticipants">
+        <PropertyRef Name="ThreadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ThreadParticipants_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_ThreadParticipants" Type="Self.tbl_ThreadParticipants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_ThreadParticipants">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Threads_tbl_Jobs">
+    <End Role="tbl_Jobs" Type="Self.tbl_Jobs" Multiplicity="0..1" />
+    <End Role="tbl_Threads" Type="Self.tbl_Threads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Threads">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_City_Mapping_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_User_City_Mapping" Type="Self.tbl_User_City_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_User_City_Mapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_SubCategory_Mapping_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_User_SubCategory_Mapping" Type="Self.tbl_User_SubCategory_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_User_SubCategory_Mapping">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_SubCategory_Mapping_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_User_SubCategory_Mapping" Type="Self.tbl_User_SubCategory_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_User_SubCategory_Mapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UserDevices_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_UserDevices" Type="Self.tbl_UserDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_UserDevices">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UserImages_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_UserImages" Type="Self.tbl_UserImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_UserImages">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAppointments_tbl_Quotes">
+    <End Role="tbl_Quotes" Type="Self.tbl_Quotes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Appointments" Type="Self.tbl_Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Quotes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Appointments">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAppointments_tbl_User">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Appointments" Type="Self.tbl_Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_Appointments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CountProfessionalActivites" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="CountUserActivites" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="bigint" Mode="In" />
+  </Function>
+  <EntityContainer Name="ReferLocalsModelStoreContainer">
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_AppFeedBack" EntityType="Self.tbl_AppFeedBack" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_AppointmentDates" EntityType="Self.tbl_AppointmentDates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Appointments" EntityType="Self.tbl_Appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Favorite" EntityType="Self.tbl_Favorite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Flag" EntityType="Self.tbl_Flag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_HomeCards" EntityType="Self.tbl_HomeCards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_HomeVideo" EntityType="Self.tbl_HomeVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Job_SubCategory_Mapping" EntityType="Self.tbl_Job_SubCategory_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Jobs" EntityType="Self.tbl_Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ManualCustomerNotes" EntityType="Self.tbl_ManualCustomerNotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ManualCustomers" EntityType="Self.tbl_ManualCustomers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Messages" EntityType="Self.tbl_Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NotificationSettings" EntityType="Self.tbl_NotificationSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Quotes" EntityType="Self.tbl_Quotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Referal" EntityType="Self.tbl_Referal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_State" EntityType="Self.tbl_State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SubCategory" EntityType="Self.tbl_SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Testimonial" EntityType="Self.tbl_Testimonial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ThreadParticipants" EntityType="Self.tbl_ThreadParticipants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Threads" EntityType="Self.tbl_Threads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_User_City_Mapping" EntityType="Self.tbl_User_City_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_User_SubCategory_Mapping" EntityType="Self.tbl_User_SubCategory_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_UserDevices" EntityType="Self.tbl_UserDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_UserImages" EntityType="Self.tbl_UserImages" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tbl_Refer__Sende__6E01572D" Association="Self.FK__tbl_Refer__Sende__6E01572D">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Referal" EntitySet="tbl_Referal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Refer__Sende__6EF57B66" Association="Self.FK__tbl_Refer__Sende__6EF57B66">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Referal" EntitySet="tbl_Referal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_AppFeedBack_tbl_User" Association="Self.FK_tbl_AppFeedBack_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_AppFeedBack" EntitySet="tbl_AppFeedBack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_AppointmentDates_tbl_Appointments" Association="Self.FK_tbl_AppointmentDates_tbl_Appointments">
+      <End Role="tbl_Appointments" EntitySet="tbl_Appointments" />
+      <End Role="tbl_AppointmentDates" EntitySet="tbl_AppointmentDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Favorite_tbl_User" Association="Self.FK_tbl_Favorite_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Favorite" EntitySet="tbl_Favorite" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Flag_tbl_User" Association="Self.FK_tbl_Flag_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Flag" EntitySet="tbl_Flag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Job_SubCategory_Mapping_tbl_Jobs" Association="Self.FK_tbl_Job_SubCategory_Mapping_tbl_Jobs">
+      <End Role="tbl_Jobs" EntitySet="tbl_Jobs" />
+      <End Role="tbl_Job_SubCategory_Mapping" EntitySet="tbl_Job_SubCategory_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Job_SubCategory_Mapping_tbl_SubCategory" Association="Self.FK_tbl_Job_SubCategory_Mapping_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Job_SubCategory_Mapping" EntitySet="tbl_Job_SubCategory_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Jobs_tbl_User" Association="Self.FK_tbl_Jobs_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Jobs" EntitySet="tbl_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ManualCustomerNotes_tbl_ManualCustomers" Association="Self.FK_tbl_ManualCustomerNotes_tbl_ManualCustomers">
+      <End Role="tbl_ManualCustomers" EntitySet="tbl_ManualCustomers" />
+      <End Role="tbl_ManualCustomerNotes" EntitySet="tbl_ManualCustomerNotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ManualCustomers_tbl_State" Association="Self.FK_tbl_ManualCustomers_tbl_State">
+      <End Role="tbl_State" EntitySet="tbl_State" />
+      <End Role="tbl_ManualCustomers" EntitySet="tbl_ManualCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ManualCustomers_tbl_User" Association="Self.FK_tbl_ManualCustomers_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_ManualCustomers" EntitySet="tbl_ManualCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Messages_tbl_Jobs" Association="Self.FK_tbl_Messages_tbl_Jobs">
+      <End Role="tbl_Jobs" EntitySet="tbl_Jobs" />
+      <End Role="tbl_Messages" EntitySet="tbl_Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Messages_tbl_Threads" Association="Self.FK_tbl_Messages_tbl_Threads">
+      <End Role="tbl_Threads" EntitySet="tbl_Threads" />
+      <End Role="tbl_Messages" EntitySet="tbl_Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Messages_tbl_User" Association="Self.FK_tbl_Messages_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Messages" EntitySet="tbl_Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NotificationSettings_tbl_User" Association="Self.FK_tbl_NotificationSettings_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_NotificationSettings" EntitySet="tbl_NotificationSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Quotes_tbl_Jobs" Association="Self.FK_tbl_Quotes_tbl_Jobs">
+      <End Role="tbl_Jobs" EntitySet="tbl_Jobs" />
+      <End Role="tbl_Quotes" EntitySet="tbl_Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Quotes_tbl_User" Association="Self.FK_tbl_Quotes_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Quotes" EntitySet="tbl_Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SubCategory_tbl_Category" Association="Self.FK_tbl_SubCategory_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ThreadParticipants_tbl_Threads" Association="Self.FK_tbl_ThreadParticipants_tbl_Threads">
+      <End Role="tbl_Threads" EntitySet="tbl_Threads" />
+      <End Role="tbl_ThreadParticipants" EntitySet="tbl_ThreadParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ThreadParticipants_tbl_User" Association="Self.FK_tbl_ThreadParticipants_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_ThreadParticipants" EntitySet="tbl_ThreadParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Threads_tbl_Jobs" Association="Self.FK_tbl_Threads_tbl_Jobs">
+      <End Role="tbl_Jobs" EntitySet="tbl_Jobs" />
+      <End Role="tbl_Threads" EntitySet="tbl_Threads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_City_Mapping_tbl_User" Association="Self.FK_tbl_User_City_Mapping_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_User_City_Mapping" EntitySet="tbl_User_City_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_SubCategory_Mapping_tbl_SubCategory" Association="Self.FK_tbl_User_SubCategory_Mapping_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_User_SubCategory_Mapping" EntitySet="tbl_User_SubCategory_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_SubCategory_Mapping_tbl_User" Association="Self.FK_tbl_User_SubCategory_Mapping_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_User_SubCategory_Mapping" EntitySet="tbl_User_SubCategory_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UserDevices_tbl_User" Association="Self.FK_tbl_UserDevices_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_UserDevices" EntitySet="tbl_UserDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UserImages_tbl_User" Association="Self.FK_tbl_UserImages_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_UserImages" EntitySet="tbl_UserImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAppointments_tbl_Quotes" Association="Self.FK_tblAppointments_tbl_Quotes">
+      <End Role="tbl_Quotes" EntitySet="tbl_Quotes" />
+      <End Role="tbl_Appointments" EntitySet="tbl_Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAppointments_tbl_User" Association="Self.FK_tblAppointments_tbl_User">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Appointments" EntitySet="tbl_Appointments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

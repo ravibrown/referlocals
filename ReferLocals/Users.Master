@@ -1,0 +1,117 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Users.Master.cs" Inherits="ReferLocals.Users" %>
+
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Welcome to Referlocals.com</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.3/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/animate.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/media-queries.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link href="/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="/css/login.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type='text/javascript'>
+    var _d_site = _d_site || '3DE2A038B4E145B381CBEAB9';
+    (function (w, d, p, s, s2) {
+        w[p] = w[p] || function () { (w[p].q = w[p].q || []).push(arguments) };
+        s = d.createElement('script'); s.async = 1; s.src = '//widget.privy.com/assets/widget.js';
+        s2 = d.getElementsByTagName('script')[0]; s2.parentNode.insertBefore(s, s2);
+    })(window, document, 'Privy');
+</script>
+</head>
+<body class=" login l_login">
+    <form id="form1" runat="server">
+        <div>
+            <!--==================================== Start Fixed Navigation ====================================-->
+            <div class="toplogin_head">
+                <a href="/Index">
+                    <img src="/images/blue_logo.png" alt="ReferLocals" />
+                </a>
+            </div>
+
+            <!--==================================== End Fixed Navigation ====================================-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="copyright"></div>
+            <uc1:Footer runat="server" ID="Footer" />
+        </div>
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="/js/jquery.min.js" type="text/javascript"></script>
+        <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="/js/jquery.tmpl.min.js"></script>
+        <!-- END CORE PLUGINS -->
+        <script src="/js/bootbox.min.js" type="text/javascript"></script>
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="/js/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/js/additional-methods.min.js" type="text/javascript"></script>
+        <script src="/js/select2.full.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="/js/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="/js/login.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <script src="/js/Jquery.DateFormat.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            function isNumberKey(evt) {
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode != 46 && charCode > 31
+                  && (charCode < 48 || charCode > 57))
+                    return false;
+
+                return true;
+            }
+
+            function IsEmail(email) {
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                return regex.test(email);
+            }
+
+            function ValidateUSPhoneNumber(phoneNumber) {
+                var regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                var phone = phoneNumber.match(regExp);
+                if (phone) {
+                    return true;
+                }
+                return false;
+            }
+        </script>
+      <%--  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyD2jTfQktxkZgpMSzkHnbbUc9vKbkvc1Hs&sensor=false"></script>
+        <script src="/js/currentlocation.js" type="text/javascript"></script>--%>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

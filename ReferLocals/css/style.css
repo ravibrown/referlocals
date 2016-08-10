@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start New Css March 02 2016 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+/*============ Start Logo page Section ============*/ 
+
+.page-header.navbar .page-logo .logo-default.logo_de { margin: 9px 0 0; /*opacity: 0.85;*/  }
+.page-header.navbar .page-logo .logo-default.logo_de:hover { opacity: 1; box-shadow: 1px 0 4px 0 #fff; }
+.page-logo span { color: #fff; float: left; font-size: 25px; font-weight: bold; margin: 6px 0 0; }
+.page-logo span:hover{ text-shadow: 0 2px 1px #ff0000; }
+
+/*============ End Logo page Section ============*/
+
+/*============ Start Single User page Section ============*/
+
+.word_limit { height: 80px; text-align: justify; width: 365px; }
+.btn.dark.btn-sm.btn-outline.sbold.uppercase.delete_single_user { background: #2f353b none repeat scroll 0 0; color: #fff; font-size: 18px; margin: 23px 0 0; padding: 5px 11px; }
+.portlet.light.portlet_light_padding { padding: 1px 20px 15px; }
+.portlet_light_padding .caption.caption-md { padding:0 0 10px !important }
+
+/*============ End Single User page Section ============*/
+
+/*============ Start Footer Section ============*/
+
+div .page-footer-inner.foo_terlink { color: #fff; float: right; font-size: 13px; }  
+.foo_terlink .fa { color: #fe6e3a; }
+.foo_terlink > a { color: #fe6e3a; }
+.foo_terlink > a:hover { color: #fe6e3a; text-decoration:none; }
+
+/*============ End Footer Section ============*/
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End New Css March 02 2016 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Profession List Css March 03 2016 +++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+.citytable { width: 350px; }
+.citytable > span { float: left; width: 100%; }
+
+.note.note-success.homesucess > h3 { font-weight: 600; }
+.homesucess p { font-size: 16px; }
+.homesucess a { color: #e7505a; font-size: 17px; font-weight:600;  }
+.btn.btn-outline.grey-salsa.redlink { background: rgba(231, 80, 90, 1) none repeat scroll 0 0; border-color: #acb5c3; color: #fff; }
+.btn.btn-outline.grey-salsa.redlink:hover { background: #d03943;}
+
+.ancherwidth{ width:140px;}
+.flag .fa-flag{ color: #dd0f0f; float: right; font-size: 22px; margin: 7px 9px 0 0; }
+.tableaddress{ width:300px; }
+.linktext{ color:#dd0f0f; font-weight:600 }
+.linktext:hover{ color:#ff0000; text-decoration:none; }
+.redbtn { float: left; margin: 0 0 16px; width: 100%; text-align:right;}
+
+.dashboard-stat2.dashbordtabl { box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.21); } 
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Profession List Css March 03 2016 +++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Category & Cards List & Job list Css March 07/08 2016 +++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+.row.rowPadding { padding: 0 0 13px; }
+.rowPadding .btn.red { margin: 0 8px 0 0; }
+.ancherwidth.ancherwidth2{ width: 205px; }
+.word_limit.word_limit2{ height: auto; text-align: justify; width: 535px; } 
+.linktext > img { border: 1px solid #d0d0d0; }
+
+.dropzone.dropzone-file-area.dz-clickable.bropjonenew { border: 1px solid #c2cad8; border-radius: 4px; margin: 0; width:100%;}
+.form-body { padding: 20px; }
+
+.card_n { float: left; margin: 10px 0 0; }
+.sort{float:left; line-height: 31px; margin: 0 8px 0 0;}
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Category & Cards List & Job list Css March 07/08 2016 +++++++++++++++++++++++++++++++++++++++++++++++++**/ 
+
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start Job Details Css March 09 2016 +++++++++++++++++++++++++++++++++++++++++++++++++**/
+
+.textbody { margin: 0 0 6px; }
+.joblist_h { margin: 0 9px 0 0; text-align: right; font-weight:600; }
+div .portlet-body .col-md-5.joblist { float: left; margin: 5px 0 6px; }
+
+.colr { background: #525e64 none repeat scroll 0 0; color: #fff; float: left; margin: 8px 0 0; padding: 10px; width: 66%; }
+.colr p { float: left; font-size: 16px; margin: 0; }
+.colr h4 { float: right; font-size: 18px; font-weight: 600; margin: 2px 1px 0 12px; }
+
+.divimage { float: left; height: 350px; width: 100%; }
+.divimage > img { height: 299px; width: 91%; }
+.jobpostlink { color: #d91918; font-weight: 600; }
+.b_buton { text-align: center; }
+
+.body_v .feeds li .col1 > .cont > .cont-col2 > .desc { margin-left: 10px !important; }
+.ancherwidth.ancherwidth3 { width: 245px; }
+

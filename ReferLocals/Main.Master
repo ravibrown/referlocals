@@ -1,0 +1,276 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ReferLocals.Main" %>
+
+<%@ Register Src="~/UserControl/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Referlocals.com</title>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/media-queries.css" />
+
+    <link href="/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.tmpl.min.js"></script>
+
+
+    <%--  <script src="/js/jquery.min.js" type="text/javascript"></script>
+        <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/js/jquery.tmpl.min.js"></script>
+        <link href="/css/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+        <script src="/js/bootstrap-tagsinput.min.js" type="text/javascript"></script>
+        <script src="/js/components-bootstrap-tagsinput.min.js" type="text/javascript"></script>
+        <script src="/js/bootbox.min.js" type="text/javascript"></script> --%>
+
+    <style>
+        .modal-backdrop {
+            z-index: 1 !important;
+        }
+
+        .autocomplete_section, .workautocomplete_section {
+            width: 100% !important;
+            padding: 4px 6px 7px 11px !important;
+            border-bottom: 1px solid #ccc !important;
+            color: #555 !important;
+            cursor: pointer;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            font-family: 'Open Sans', sans-serif !important;
+            text-shadow: none;
+            text-align: left;
+        }
+
+        #div_SearchContent, #div_WorkSearchContent, #div_CitiesIServeSearchContent {
+            background-color: #f1f1f1;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.73);
+            display: none;
+            margin: 2px 0 0 18px;
+            max-height: 735px;
+            overflow-y: hidden;
+            overflow: auto;
+            width: 92%;
+            z-index: 9999;
+        }
+
+        #divLoader, #divWorkLoader {
+            position: absolute;
+            top: 5px;
+            right: 25px;
+        }
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type='text/javascript'>
+    var _d_site = _d_site || '3DE2A038B4E145B381CBEAB9';
+    (function (w, d, p, s, s2) {
+        w[p] = w[p] || function () { (w[p].q = w[p].q || []).push(arguments) };
+        s = d.createElement('script'); s.async = 1; s.src = '//widget.privy.com/assets/widget.js';
+        s2 = d.getElementsByTagName('script')[0]; s2.parentNode.insertBefore(s, s2);
+    })(window, document, 'Privy');
+</script>
+</head>
+<body id="body">
+    <form id="form1" runat="server">
+        <input type="hidden" id="hdnLocationId" value=" " />
+        <div>
+            <!--==================================== Start Fixed Navigation ====================================-->
+            <header id="navigation" class="navbar-fixed-top navbar" style="z-index: 99 !important;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- responsive nav button -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <i class="fa fa-bars fa-2x"></i></button>
+                        <!-- /responsive nav button -->
+
+                        <!-- logo -->
+                        <a class="navbar-brand" href="/Index">
+                            <h1 id="logo">
+                                <img src="/images/logo.png" alt="ReferLocals" />
+                            </h1>
+                        </a>
+                        <!-- /logo -->
+                    </div>
+
+                    <!-- main nav -->
+                    <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                        <ul id="nav" class="nav navbar-nav">
+                            <li class="current"><a href="/index">HOME</a></li>
+                            <li><a href="/referprofessional/search">LOCAL PROFESSIONAL </a></li>
+                            <li><a href="/referprofessional/searchjob">LOCAL JOBS</a></li>
+                            <li><a href="http://blog.referlocals.com/" target="_blank">BLOG</a></li>
+                            <li><a id="aForProfessional" runat="server" clientidmode="Static">FOR PROFESSIONAL</a></li>
+                        </ul>
+                        <%if (!DataAccess.HelperClasses.SessionService.HasKey("UserId"))
+                            { %>
+                        <div class="log-b"><a href="/Login" class="loginbtn">Login </a><span>I </span><a href="/Login#register" class="loginbtn">Register </a></div>
+                        <%}
+                            else
+                            { %>
+                        <div class="profile_b" style="margin: 0px; padding: 0px; margin-top: -5px;">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown dropdown-user">
+                                    <a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
+                                        <img src="<%=string.IsNullOrEmpty( DataAccess.HelperClasses.Common.UserImage)||DataAccess.HelperClasses.Common.UserImage==DataAccess.HelperClasses.Common.NoImageIcon?DataAccess.HelperClasses.Common.NoImageIcon+"?width=30&height=30":DataAccess.HelperClasses.Common.UserImagesPath+DataAccess.HelperClasses.Common.UserImage+"?width=30&height=30"%>" class="img-circle" alt="UserImage" />
+                                        <span class="username username-hide-on-mobile"><%=DataAccess.HelperClasses.Common.UserName%> </span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul id="ulSettings" class="dropdown-menu dropdown-menu-default">
+                                        <li><a href="/user_dashboard" style="color: #333333 !important;">My Dashboard </a></li>
+                                        <li><a href="/Profile" style="color: #333333 !important">My Account </a></li>
+                                        <li><a href="/Favorites" style="color: #333333 !important;">My Network </a></li>
+                                        <li><a href="/inbox" style="color: #333333 !important;">Messages </a></li>
+                                        <li class="divider"></li>
+                                        <li><a onclick="Logout();" style="cursor: pointer; color: #000000;">Log Out</a> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <%} %>
+                    </nav>
+                    <!-- /main nav -->
+                </div>
+            </header>
+
+            <!--==================================== End Fixed Navigation ====================================-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--==================================== Start Download Link HTML ====================================-->
+
+            <div class="testimonail_d">
+                <div class="container">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                        <h2 class="dl">Text me the Download link <span><%--<a href="#">
+                            <img src="/images/android.png" alt="" />
+                        </a>--%><a href="<%=DataAccess.HelperClasses.Common.IOSAppLink %>" target="_blank">
+                            <img src="/images/apple.png" alt="" /></a> </span></h2>
+                        <div class="dl_search">
+                            <div class="dl_search1">
+                                <asp:DropDownList ID="drpCountryCode" ClientIDMode="Static" class="topsrchhdr" 
+                                    Style="width: 15%; float: left;height:53px;" runat="server">
+                                </asp:DropDownList>
+                                <input id="txtMobileNumberForAppLink" class="topsrchhdr" style="width:65%" type="text" placeholder="Enter Your Mobile Number" />
+                                <a id="aGetLink" onclick="GetAppLink();" style="text-align:center;background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 51%, #032f64 100%) repeat scroll 0 0; border: 1px solid #7db9e8; color: #fff; float: right; font-size: 18px; padding: 14px 0; width: 19%;">Get Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--==================================== End Download Link HTML ====================================-->
+            <uc1:Footer runat="server" ID="Footer" />
+
+
+            <!-- Single Page Nav -->
+            <script src="/js/jquery.singlePageNav.min.js" type="text/javascript"></script>
+            <script src="/js/wow.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                
+                var wow = new WOW({
+                    boxClass: 'wow',      // animated element css class (default is wow)
+                    animateClass: 'animated', // animation css class (default is animated)
+                    offset: 120,          // distance to the element when triggering the animation (default is 0)
+                    mobile: false,       // trigger animations on mobile devices (default is true)
+                    live: true        // act on asynchronously loaded content (default is true)
+                }
+                );
+                wow.init();
+            </script>
+            <script type="text/javascript" src="/js/custom.js"></script>
+            <script type="text/javascript">
+
+                $('a').click(function () {
+                    $('html, body').animate({
+                        scrollTop: $($(this).attr('href')).offset().top
+                    }, 800);
+                    return false;
+                });
+
+
+                $('#back-top').on('click', function (e) {
+                    e.preventDefault();
+                    $('html,body').animate({
+                        scrollTop: 0
+                    }, 1000);
+                });
+
+                function isNumberKey(evt) {
+                    var charCode = (evt.which) ? evt.which : evt.keyCode;
+                    if (charCode != 46 && charCode > 31
+                      && (charCode < 48 || charCode > 57))
+                        return false;
+
+                    return true;
+                }
+
+                function IsEmail(email) {
+                    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    return regex.test(email);
+                }
+
+                function ValidateUSPhoneNumber(phoneNumber) {
+                    var regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                    var phone = phoneNumber.match(regExp);
+                    if (phone) {
+                        return true;
+                    }
+                    return false;
+                }
+
+                function Logout() {
+                    $.ajax({
+                        url: '/Index.aspx/Logout',
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            window.location.href = result.d;
+                        }
+                    });
+                }
+               
+            </script>
+            <script src="/js/bootstrap.min.js"></script>
+            <script src="/js/bootbox.min.js"></script>
+            <script src="/js/Jquery.DateFormat.min.js" type="text/javascript"></script>
+            <script>
+                function GetAppLink() {
+                    var mobile = $("#txtMobileNumberForAppLink").val();
+                    var countryCode = $("#drpCountryCode").val();
+                    if (!ValidateUSPhoneNumber(mobile)) {
+                        bootbox.alert("Please enter valid mobile number");
+                    }
+                    else {
+                        $.ajax({
+                            url: '/Index.aspx/GetAppLink',
+                            type: "POST",
+                            data: "{mobile:'" + mobile + "',countryCode:'" + countryCode + "'}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+                                bootbox.alert("App link sent to your mobile number");
+                                $("#txtMobileNumberForAppLink").val("");
+                                $("#drpCountryCode").val("1");
+                            }
+                        });
+                    }
+                }
+            </script>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+</body>
+</html>

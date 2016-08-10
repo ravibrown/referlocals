@@ -1,0 +1,5 @@
+E:\Projects\Hashbrown\referlocals\DataContracts\bin\Debug\DataContracts.dll
+E:\Projects\Hashbrown\referlocals\DataContracts\bin\Debug\DataContracts.pdb
+E:\Projects\Hashbrown\referlocals\DataContracts\obj\Debug\DataContracts.dll
+E:\Projects\Hashbrown\referlocals\DataContracts\obj\Debug\DataContracts.pdb
+E:\Projects\Hashbrown\referlocals\DataContracts\obj\Debug\DataContracts.csprojResolveAssemblyReference.cache

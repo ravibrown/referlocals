@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReferLocalsModelStoreContainer" CdmEntityContainer="ReferLocalsEntities">
+    <EntitySetMapping Name="tbl_HomeCards">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_HomeCards">
+        <MappingFragment StoreEntitySet="tbl_HomeCards">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="IconImage" ColumnName="IconImage" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_HomeVideo">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_HomeVideo">
+        <MappingFragment StoreEntitySet="tbl_HomeVideo">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Category">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Category">
+        <MappingFragment StoreEntitySet="tbl_Category">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SubCategory">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_SubCategory">
+        <MappingFragment StoreEntitySet="tbl_SubCategory">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Testimonial">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Testimonial">
+        <MappingFragment StoreEntitySet="tbl_Testimonial">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ReferLocalsModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CodeTelePhone" ColumnName="CodeTelePhone" />
+          <ScalarProperty Name="CodeThreeDigit" ColumnName="CodeThreeDigit" />
+          <ScalarProperty Name="CodeTwoDigit" ColumnName="CodeTwoDigit" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_State">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_State">
+        <MappingFragment StoreEntitySet="tbl_State">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_User_City_Mapping">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_User_City_Mapping">
+        <MappingFragment StoreEntitySet="tbl_User_City_Mapping">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_User_SubCategory_Mapping">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_User_SubCategory_Mapping">
+        <MappingFragment StoreEntitySet="tbl_User_SubCategory_Mapping">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UserImages">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_UserImages">
+        <MappingFragment StoreEntitySet="tbl_UserImages">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsProfilePicture" ColumnName="IsProfilePicture" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Referal">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Referal">
+        <MappingFragment StoreEntitySet="tbl_Referal">
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="IsFlag" ColumnName="IsFlag" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsRefered" ColumnName="IsRefered" />
+          <ScalarProperty Name="IsSatisfied" ColumnName="IsSatisfied" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Job_SubCategory_Mapping">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Job_SubCategory_Mapping">
+        <MappingFragment StoreEntitySet="tbl_Job_SubCategory_Mapping">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Jobs">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Jobs">
+        <MappingFragment StoreEntitySet="tbl_Jobs">
+          <ScalarProperty Name="ProfessionalID" ColumnName="ProfessionalID" />
+          <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_User">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_User">
+        <MappingFragment StoreEntitySet="tbl_User">
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="SocialType" ColumnName="SocialType" />
+          <ScalarProperty Name="CanSendPushNotification" ColumnName="CanSendPushNotification" />
+          <ScalarProperty Name="AzureNotificationId" ColumnName="AzureNotificationId" />
+          <ScalarProperty Name="IsProfileUpdated" ColumnName="IsProfileUpdated" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="DeviceToken" ColumnName="DeviceToken" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsApprovedByAdmin" ColumnName="IsApprovedByAdmin" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Appartment" ColumnName="Appartment" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ZipId" ColumnName="ZipId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UserDevices">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_UserDevices">
+        <MappingFragment StoreEntitySet="tbl_UserDevices">
+          <ScalarProperty Name="LoggedOn" ColumnName="LoggedOn" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="DeviceToken" ColumnName="DeviceToken" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Quotes">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Quotes">
+        <MappingFragment StoreEntitySet="tbl_Quotes">
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Estimate" ColumnName="Estimate" />
+          <ScalarProperty Name="ProfessionalID" ColumnName="ProfessionalID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AppointmentDates">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_AppointmentDates">
+        <MappingFragment StoreEntitySet="tbl_AppointmentDates">
+          <ScalarProperty Name="IsAcceptedByProfessional" ColumnName="IsAcceptedByProfessional" />
+          <ScalarProperty Name="IsAcceptedByUser" ColumnName="IsAcceptedByUser" />
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+          <ScalarProperty Name="AppointmentDateTime" ColumnName="AppointmentDateTime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Appointments">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Appointments">
+        <MappingFragment StoreEntitySet="tbl_Appointments">
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="RescheduledByProfessional" ColumnName="RescheduledByProfessional" />
+          <ScalarProperty Name="RescheduledByUser" ColumnName="RescheduledByUser" />
+          <ScalarProperty Name="IsRescheduled" ColumnName="IsRescheduled" />
+          <ScalarProperty Name="ProfessionalID" ColumnName="ProfessionalID" />
+          <ScalarProperty Name="IsAcceptedByProfessional" ColumnName="IsAcceptedByProfessional" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CountUserActivites" FunctionName="ReferLocalsModel.Store.CountUserActivites">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ReferLocalsModel.CountUserActivites_Result">
+          <ScalarProperty Name="jobCount" ColumnName="jobCount" />
+          <ScalarProperty Name="referalcount" ColumnName="referalcount" />
+          <ScalarProperty Name="appointmentRequests" ColumnName="appointmentRequests" />
+          <ScalarProperty Name="Appointments" ColumnName="Appointments" />
+          <ScalarProperty Name="favorites" ColumnName="favorites" />
+          <ScalarProperty Name="followers" ColumnName="followers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CountProfessionalActivites" FunctionName="ReferLocalsModel.Store.CountProfessionalActivites">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ReferLocalsModel.CountProfessionalActivites_Result">
+          <ScalarProperty Name="referalcount" ColumnName="referalcount" />
+          <ScalarProperty Name="estimates" ColumnName="estimates" />
+          <ScalarProperty Name="appointmentRequests" ColumnName="appointmentRequests" />
+          <ScalarProperty Name="Appointments" ColumnName="Appointments" />
+          <ScalarProperty Name="favorites" ColumnName="favorites" />
+          <ScalarProperty Name="followers" ColumnName="followers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_Favorite">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Favorite">
+        <MappingFragment StoreEntitySet="tbl_Favorite">
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Favoritetype" ColumnName="Favoritetype" />
+          <ScalarProperty Name="FavoriteTypeID" ColumnName="FavoriteTypeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Flag">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Flag">
+        <MappingFragment StoreEntitySet="tbl_Flag">
+          <ScalarProperty Name="FlagReason" ColumnName="FlagReason" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="FlagType" ColumnName="FlagType" />
+          <ScalarProperty Name="FlagTypeID" ColumnName="FlagTypeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Messages">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Messages">
+        <MappingFragment StoreEntitySet="tbl_Messages">
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="ThreadID" ColumnName="ThreadID" />
+          <ScalarProperty Name="IsDeletedByReceiver" ColumnName="IsDeletedByReceiver" />
+          <ScalarProperty Name="IsDeletedBySender" ColumnName="IsDeletedBySender" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="IsJobMessage" ColumnName="IsJobMessage" />
+          <ScalarProperty Name="MessageOn" ColumnName="MessageOn" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Threads">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_Threads">
+        <MappingFragment StoreEntitySet="tbl_Threads">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="IsJobThread" ColumnName="IsJobThread" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ThreadParticipants">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_ThreadParticipants">
+        <MappingFragment StoreEntitySet="tbl_ThreadParticipants">
+          <ScalarProperty Name="ThreadID" ColumnName="ThreadID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NotificationSettings">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_NotificationSettings">
+        <MappingFragment StoreEntitySet="tbl_NotificationSettings">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AppointmentRequest" ColumnName="AppointmentRequest" />
+          <ScalarProperty Name="EstimateFeedback" ColumnName="EstimateFeedback" />
+          <ScalarProperty Name="NewMessage" ColumnName="NewMessage" />
+          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+          <ScalarProperty Name="NewFollowers" ColumnName="NewFollowers" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AppFeedBack">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_AppFeedBack">
+        <MappingFragment StoreEntitySet="tbl_AppFeedBack">
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ManualCustomers">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_ManualCustomers">
+        <MappingFragment StoreEntitySet="tbl_ManualCustomers">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="addedon" ColumnName="addedon" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ManualCustomerNotes">
+      <EntityTypeMapping TypeName="ReferLocalsModel.tbl_ManualCustomerNotes">
+        <MappingFragment StoreEntitySet="tbl_ManualCustomerNotes">
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="ManualCustomerID" ColumnName="ManualCustomerID" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
